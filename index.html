@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rajat Bhattacharya - Computer Science Engineering Undergrad at Lovely Professional University. Full-stack developer, DSA enthusiast, and algorithm visualizer creator.">
+  <meta name="keywords" content="Rajat Bhattacharya, Portfolio, Software Engineer, B.Tech CSE, DSA Visualizer, Python, JavaScript, Lovely Professional University">
+  <meta name="author" content="Rajat Bhattacharya">
+
+  <title>Rajat Bhattacharya | Software Developer & CSE Undergrad</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Ambient Light Orbs for Cyber Glow Effect -->
+  <div class="ambient-orb orb-1"></div>
+  <div class="ambient-orb orb-2"></div>
+  <div class="ambient-orb orb-3"></div>
+
+  <!-- Interactive Particles Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-logo">
+        <div class="nav-logo-icon">RB</div>
+        <span>Rajat<span class="text-gradient">.dev</span></span>
+      </a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#dsa-demo" class="nav-link">DSA Live Lab</a>
+        <a href="#certifications" class="nav-link">Certifications</a>
+        <a href="#terminal" class="nav-link">Terminal</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" id="theme-toggle" title="Toggle Theme" aria-label="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <a href="#contact" class="btn btn-primary btn-sm" id="nav-hire-btn">
+          <span>Hire Me</span>
+          <i class="fa-solid fa-paper-plane"></i>
+        </a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <section class="hero" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="status-dot"></span>
+            <span>Available for Internships & Projects</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <br>
+            <span class="text-gradient">Rajat Bhattacharya</span>
+          </h1>
+
+          <div class="hero-typewriter">
+            <span id="typewriter-text"></span>
+            <span class="typed-cursor">|</span>
+          </div>
+
+          <p class="hero-bio">
+            Computer Science & Engineering undergraduate at <strong>Lovely Professional University (CGPA 8.80)</strong>. Passionate about developing interactive web systems, algorithmic visualizers, Python automation, and modern full-stack web applications.
+          </p>
+
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary" id="hero-projects-btn">
+              <span>Explore Projects</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#contact" class="btn btn-secondary" id="hero-contact-btn">
+              <span>Get In Touch</span>
+              <i class="fa-regular fa-envelope"></i>
+            </a>
+            <button class="btn btn-outline" id="resume-download-btn" onclick="window.print()">
+              <span>Print / Save CV</span>
+              <i class="fa-solid fa-download"></i>
+            </button>
+          </div>
+
+          <div class="hero-socials">
+            <a href="http://www.linkedin.com/in/rajat-bhattacharya-774a96394" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/rajatbhattachrya20-hub" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="mailto:rajatbhattachrya20@gmail.com" class="social-link" title="Email" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="tel:+917063454183" class="social-link" title="Phone" aria-label="Phone">
+              <i class="fa-solid fa-phone"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="code-mockup-card">
+            <div class="mockup-header">
+              <div class="mockup-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <span class="mockup-title">rajat_profile.js</span>
+              <i class="fa-brands fa-js" style="color: #f7df1e;"></i>
+            </div>
+            <div class="mockup-body">
+              <span class="token-keyword">const</span> <span class="token-function">engineer</span> = {<br>
+              &nbsp;&nbsp;<span class="token-property">name</span>: <span class="token-string">"Rajat Bhattacharya"</span>,<br>
+              &nbsp;&nbsp;<span class="token-property">education</span>: <span class="token-string">"B.Tech CSE @ LPU"</span>,<br>
+              &nbsp;&nbsp;<span class="token-property">cgpa</span>: <span class="token-number">8.80</span>,<br>
+              &nbsp;&nbsp;<span class="token-property">coreStack</span>: [<span class="token-string">"Python"</span>, <span class="token-string">"JavaScript"</span>, <span class="token-string">"C++"</span>, <span class="token-string">"MySQL"</span>],<br>
+              &nbsp;&nbsp;<span class="token-property">interests</span>: [<span class="token-string">"Data Structures"</span>, <span class="token-string">"Web Apps"</span>, <span class="token-string">"AI & Automation"</span>],<br>
+              &nbsp;&nbsp;<span class="token-property">status</span>: <span class="token-string">"Building & Innovating 🚀"</span><br>
+              };<br><br>
+              <span class="token-comment">// Let's build scalable solutions together!</span><br>
+              <span class="token-function">engineer</span>.<span class="token-function">collaborate</span>();
+            </div>
+          </div>
+
+          <div class="hero-stats-floating">
+            <div class="stat-pill glass-card">
+              <i class="fa-solid fa-graduation-cap stat-icon"></i>
+              <div>
+                <div class="stat-val">8.80</div>
+                <div class="stat-label">LPU CGPA</div>
+              </div>
+            </div>
+            <div class="stat-pill glass-card">
+              <i class="fa-solid fa-code-branch stat-icon"></i>
+              <div>
+                <div class="stat-val">15+</div>
+                <div class="stat-label">DSA Algorithms</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         ABOUT & EDUCATION SECTION
+         ========================================================================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-user"></i> Background</div>
+          <h2 class="section-title">About <span class="text-gradient">Me & Education</span></h2>
+          <p class="section-subtitle">Dedicated computer science student driven by strong algorithmic foundations, creative frontend designs, and software engineering principles.</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Summary & Highlights -->
+          <div class="about-card glass-card">
+            <div>
+              <h3 class="about-card-title"><i class="fa-solid fa-compass"></i> Engineering Philosophy</h3>
+              <p class="about-text">
+                I am a forward-thinking developer pursuing my Bachelor of Technology in Computer Science and Engineering at Lovely Professional University. I love turning complex logic into visually intuitive, responsive web platforms.
+              </p>
+              <p class="about-text">
+                From implementing interactive algorithms in my <strong>DSA Visualizer</strong> project to automating network operations with Python and training in AI fundamentals, I constantly challenge myself to solve real-world problems.
+              </p>
+            </div>
+
+            <div class="about-highlights">
+              <div class="highlight-item">
+                <h4>8.80 / 10</h4>
+                <p>Academic CGPA @ LPU</p>
+              </div>
+              <div class="highlight-item">
+                <h4>4+</h4>
+                <p>Core Programming Languages</p>
+              </div>
+              <div class="highlight-item">
+                <h4>4 Certifications</h4>
+                <p>AI, Automation, CDP & Leadership</p>
+              </div>
+              <div class="highlight-item">
+                <h4>15+</h4>
+                <p>Interactive Visualizers</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Academic Timeline -->
+          <div class="about-card glass-card">
+            <h3 class="about-card-title"><i class="fa-solid fa-book-open"></i> Academic Journey</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2025 – 2029 (Present)</div>
+                <div class="timeline-title">Bachelor of Technology (B.Tech) - CSE</div>
+                <div class="timeline-subtitle">Lovely Professional University | Phagwara, Punjab</div>
+                <span class="timeline-badge">CGPA: 8.80</span>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">May 2023 – Feb 2025</div>
+                <div class="timeline-title">Higher Secondary Education (12th Grade)</div>
+                <div class="timeline-subtitle">Chandkuri Union High School (H.S.) | Medinipur, West Bengal</div>
+                <span class="timeline-badge">Percentage: 86%</span>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Jan 2022 – Mar 2023</div>
+                <div class="timeline-title">Secondary Education (10th Grade)</div>
+                <div class="timeline-subtitle">Chandkuri Union High School (H.S.) | Medinipur, West Bengal</div>
+                <span class="timeline-badge">Percentage: 90%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         SKILLS MATRIX SECTION
+         ========================================================================== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-layer-group"></i> Expertise</div>
+          <h2 class="section-title">Technical <span class="text-gradient">Skill Matrix</span></h2>
+          <p class="section-subtitle">Proficiencies acquired through rigorous coursework, hands-on software projects, and continuous learning.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="skills-nav">
+          <button class="skill-tab-btn active" data-filter="all">All Skills</button>
+          <button class="skill-tab-btn" data-filter="languages">Languages</button>
+          <button class="skill-tab-btn" data-filter="frontend">Frontend & Web</button>
+          <button class="skill-tab-btn" data-filter="tools">Databases & Tools</button>
+          <button class="skill-tab-btn" data-filter="soft">Soft Skills</button>
+        </div>
+
+        <div class="skills-grid" id="skills-container">
+          <!-- Languages -->
+          <div class="skill-card glass-card" data-category="languages">
+            <div class="skill-icon-wrapper" style="color: #38bdf8;">
+              <i class="fa-brands fa-python"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-name">Python</div>
+              <div class="skill-desc">Network scripting, Automation & AI</div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-bar" style="width: 88%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-card" data-category="languages">
+            <div class="skill-icon-wrapper" style="color: #f7df1e;">
+              <i class="fa-brands fa-js"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-name">JavaScript (ES6+)</div>
+              <div class="skill-desc">Interactive UI & Algorithm animations</div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-bar" style="width: 90%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-card" data-category="languages">
+            <div class="skill-icon-wrapper" style="color: #60a5fa;">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-name">C++</div>
+              <div class="skill-desc">Data Structures & Algorithm Design</div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-bar" style="width: 85%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-card" data-category="languages">
+            <div class="skill-icon-wrapper" style="color: #a855f7;">
+              <i class="fa-solid fa-c"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-name">C Programming</div>
+              <div class="skill-desc">Low-level memory & Systems logic</div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-bar" style="width: 82%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Frontend -->
+          <div class="skill-card glass-card" data-category="frontend">
+            <div class="skill-icon-wrapper" style="color: #ea580c;">
+              <i class="fa-brands fa-html5"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-name">HTML5</div>
+              <div class="skill-desc">Semantic structure & Accessibility</div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-bar" style="width: 95%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-card" data-category="frontend">
+            <div class="skill-icon-wrapper" style="color: #0284c7;">
+              <i class="fa-brands fa-css3-alt"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-name">CSS3 & Styling</div>
+              <div class="skill-desc">Flexbox, Grid, Glassmorphism, Animations</div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-bar" style="width: 92%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools & DB -->
+          <div class="skill-card glass-card" data-category="tools">
+            <div class="skill-icon-wrapper" style="color: #00758f;">
+              <i class="fa-solid fa-database"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-name">MySQL</div>
+              <div class="skill-desc">Relational DB, Queries & Modeling</div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-bar" style="width: 80%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-card" data-category="tools">
+            <div class="skill-icon-wrapper" style="color: #f05032;">
+              <i class="fa-brands fa-git-alt"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-name">Git & GitHub</div>
+              <div class="skill-desc">Version control, branching & collaboration</div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-bar" style="width: 88%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-card" data-category="tools">
+            <div class="skill-icon-wrapper" style="color: #f24e1e;">
+              <i class="fa-brands fa-figma"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-name">Figma</div>
+              <div class="skill-desc">UI/UX prototyping, wireframing & design</div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-bar" style="width: 82%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Soft Skills -->
+          <div class="skill-card glass-card" data-category="soft">
+            <div class="skill-icon-wrapper" style="color: #10b981;">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-name">Problem Solving</div>
+              <div class="skill-desc">Algorithmic thinking & analytical breakdown</div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-bar" style="width: 92%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-card" data-category="soft">
+            <div class="skill-icon-wrapper" style="color: #ec4899;">
+              <i class="fa-solid fa-people-group"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-name">Team Collaboration</div>
+              <div class="skill-desc">Leadership training & agile teamwork</div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-bar" style="width: 90%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-card" data-category="soft">
+            <div class="skill-icon-wrapper" style="color: #fbbf24;">
+              <i class="fa-solid fa-hourglass-half"></i>
+            </div>
+            <div class="skill-info">
+              <div class="skill-name">Time Management</div>
+              <div class="skill-desc">Project delivery & milestone tracking</div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-bar" style="width: 88%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         FEATURED PROJECTS SECTION
+         ========================================================================== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-laptop-code"></i> Portfolio Work</div>
+          <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
+          <p class="section-subtitle">Real-world applications showcasing algorithmic mastery, full-stack design, and automated workflows.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: DSA Visualizer (Signature Project) -->
+          <div class="project-card glass-card">
+            <div class="project-banner">
+              <span class="project-badge">Jul 2026 – Present</span>
+              <i class="fa-solid fa-chart-simple project-banner-icon"></i>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">DSA Visualizer Platform</h3>
+              <div class="project-period"><i class="fa-solid fa-calendar-days"></i> Active Core Project</div>
+              <p class="project-desc">
+                An interactive algorithm and data structure visualizer designed to make complex computing concepts crystal clear through step-by-step animations.
+              </p>
+
+              <div class="project-features">
+                <div class="project-feature-item">
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span><strong>15 DSA Visualizations:</strong> Across Easy (4), Medium (8), and Hard (3) tiers.</span>
+                </div>
+                <div class="project-feature-item">
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span><strong>Complexity Breakdown:</strong> Real-time space and time complexity metrics alongside source code view.</span>
+                </div>
+                <div class="project-feature-item">
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span><strong>Interactive Controls:</strong> Custom speed sliders, step-by-step pauses, and custom array inputs.</span>
+                </div>
+              </div>
+
+              <div class="project-tags">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript ES6</span>
+                <span class="tech-tag">Algorithms</span>
+                <span class="tech-tag">Animation Engine</span>
+              </div>
+
+              <div class="project-links">
+                <a href="#dsa-demo" class="btn btn-primary btn-sm">
+                  <span>Try Live Mini Lab</span>
+                  <i class="fa-solid fa-play"></i>
+                </a>
+                <a href="https://github.com/rajatbhattachrya20-hub" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  <span>GitHub</span>
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Modern Digital Portfolio -->
+          <div class="project-card glass-card">
+            <div class="project-banner">
+              <span class="project-badge">Featured Showcase</span>
+              <i class="fa-solid fa-globe project-banner-icon" style="color: var(--accent-violet);"></i>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Interactive Digital Portfolio</h3>
+              <div class="project-period"><i class="fa-solid fa-calendar-days"></i> Current</div>
+              <p class="project-desc">
+                A state-of-the-art developer portfolio featuring dark/light theme dynamics, embedded developer terminal emulator, interactive live sorting demo, and modern glassmorphism.
+              </p>
+
+              <div class="project-features">
+                <div class="project-feature-item">
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span><strong>Interactive Terminal:</strong> Functional command line interface for tech recruiters.</span>
+                </div>
+                <div class="project-feature-item">
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span><strong>Glassmorphism & Micro-animations:</strong> Cyber ambient lighting, particles, and smooth transitions.</span>
+                </div>
+                <div class="project-feature-item">
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span><strong>Responsive & Accessible:</strong> Fluid layouts optimized for all viewport dimensions.</span>
+                </div>
+              </div>
+
+              <div class="project-tags">
+                <span class="tech-tag">HTML5 / CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Glassmorphism</span>
+                <span class="tech-tag">Canvas Particles</span>
+              </div>
+
+              <div class="project-links">
+                <a href="#hero" class="btn btn-primary btn-sm">
+                  <span>Explore Site</span>
+                  <i class="fa-solid fa-arrow-up"></i>
+                </a>
+                <a href="https://github.com/rajatbhattachrya20-hub" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  <span>Repository</span>
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Network Automation & Python Tools -->
+          <div class="project-card glass-card">
+            <div class="project-banner">
+              <span class="project-badge">Python Automation</span>
+              <i class="fa-solid fa-network-wired project-banner-icon" style="color: var(--accent-emerald);"></i>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Python Network Automation Toolkit</h3>
+              <div class="project-period"><i class="fa-solid fa-calendar-days"></i> Training & Practice</div>
+              <p class="project-desc">
+                Engineered automated scripts in Python to streamline configuration management, network topology queries, and diagnostics for network infrastructure.
+              </p>
+
+              <div class="project-features">
+                <div class="project-feature-item">
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span><strong>Automated Scripting:</strong> Python scripts for rapid device configuration and health audits.</span>
+                </div>
+                <div class="project-feature-item">
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span><strong>Efficiency Gains:</strong> Drastically reduced manual CLI command overheads.</span>
+                </div>
+              </div>
+
+              <div class="project-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Network Automation</span>
+                <span class="tech-tag">Scripting</span>
+                <span class="tech-tag">CLI Tools</span>
+              </div>
+
+              <div class="project-links">
+                <a href="#certifications" class="btn btn-primary btn-sm">
+                  <span>View Certification</span>
+                  <i class="fa-solid fa-certificate"></i>
+                </a>
+                <a href="https://github.com/rajatbhattachrya20-hub" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  <span>GitHub</span>
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- ==========================================================================
+             INTERACTIVE MINI DSA VISUALIZER SANDBOX (Live demo inside portfolio!)
+             ========================================================================== -->
+        <div class="dsa-widget-container" id="dsa-demo">
+          <div class="dsa-widget-header">
+            <div class="dsa-widget-title">
+              <i class="fa-solid fa-bolt"></i>
+              <span>Live Algorithm Visualizer Sandbox</span>
+            </div>
+
+            <div class="dsa-controls">
+              <select class="dsa-select" id="dsa-algo-select" aria-label="Select Algorithm">
+                <option value="bubble">Bubble Sort (O(N²))</option>
+                <option value="selection">Selection Sort (O(N²))</option>
+                <option value="insertion">Insertion Sort (O(N²))</option>
+              </select>
+              <button class="btn btn-secondary btn-sm" id="dsa-generate-btn">
+                <i class="fa-solid fa-shuffle"></i> New Array
+              </button>
+              <button class="btn btn-primary btn-sm" id="dsa-start-btn">
+                <i class="fa-solid fa-play"></i> Start Sort
+              </button>
+              <button class="btn btn-secondary btn-sm" id="dsa-reset-btn">
+                <i class="fa-solid fa-rotate-left"></i> Reset
+              </button>
+            </div>
+          </div>
+
+          <!-- Visual Bar Stage -->
+          <div class="dsa-stage" id="dsa-stage">
+            <!-- Dynamic bars rendered via JavaScript -->
+          </div>
+
+          <div class="dsa-status-bar">
+            <div>
+              <span id="dsa-status-text">Status: <strong>Ready to visualize algorithm execution.</strong></span>
+            </div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <span class="dsa-stat-badge" id="dsa-comparisons">Comparisons: 0</span>
+              <span class="dsa-stat-badge" id="dsa-swaps">Swaps: 0</span>
+              <span class="dsa-stat-badge" id="dsa-complexity">Time: O(N²) | Space: O(1)</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         TRAINING & CERTIFICATES SECTION
+         ========================================================================== -->
+    <section class="section" id="certifications">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-certificate"></i> Credentials</div>
+          <h2 class="section-title">Certificates & <span class="text-gradient">Training</span></h2>
+          <p class="section-subtitle">Verified professional training milestones and industry-focused course achievements.</p>
+        </div>
+
+        <div class="certs-grid">
+          <!-- Cert 1 -->
+          <div class="cert-card glass-card">
+            <div class="cert-header">
+              <div class="cert-icon">
+                <i class="fa-solid fa-users"></i>
+              </div>
+              <span class="cert-date">Jun 2026 – Jul 2026</span>
+            </div>
+            <h3 class="cert-title">Community Development Project (CDP)</h3>
+            <p class="cert-desc">
+              Completed an intensive community development project as part of official academic engineering training, focusing on collaborative social impact and management.
+            </p>
+            <div class="cert-action">
+              <button class="btn btn-outline btn-sm cert-modal-trigger" data-cert="Community Development Project (CDP)" data-date="Jun 2026 - Jul 2026" data-details="Official academic training certification covering community outreach, problem analysis, collaborative initiatives, and social impact execution.">
+                <span>View Certificate Details</span>
+                <i class="fa-solid fa-up-right-from-square"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Cert 2 -->
+          <div class="cert-card glass-card">
+            <div class="cert-header">
+              <div class="cert-icon" style="color: var(--accent-cyan); background: rgba(6, 182, 212, 0.12);">
+                <i class="fa-solid fa-robot"></i>
+              </div>
+              <span class="cert-date">Mar 2026</span>
+            </div>
+            <h3 class="cert-title">Introduction to Artificial Intelligence</h3>
+            <p class="cert-desc">
+              Successfully completed fundamental training in AI concepts, search heuristics, machine learning paradigms, neural foundation models, and ethical AI applications.
+            </p>
+            <div class="cert-action">
+              <button class="btn btn-outline btn-sm cert-modal-trigger" data-cert="Introduction to Artificial Intelligence" data-date="March 2026" data-details="Certified foundational knowledge in modern Artificial Intelligence paradigms, data processing pipelines, machine learning models, and algorithm optimization.">
+                <span>View Certificate Details</span>
+                <i class="fa-solid fa-up-right-from-square"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Cert 3 -->
+          <div class="cert-card glass-card">
+            <div class="cert-header">
+              <div class="cert-icon" style="color: var(--accent-emerald); background: rgba(16, 185, 129, 0.12);">
+                <i class="fa-solid fa-network-wired"></i>
+              </div>
+              <span class="cert-date">Nov 2025</span>
+            </div>
+            <h3 class="cert-title">Master Network Automation with Python</h3>
+            <p class="cert-desc">
+              Comprehensive practical training in leveraging Python for network automation, configuration deployment, API interactions, and telemetry parsing.
+            </p>
+            <div class="cert-action">
+              <button class="btn btn-outline btn-sm cert-modal-trigger" data-cert="Master Network Automation with Python for Network Engineers" data-date="November 2025" data-details="Mastery of network automation scripting with Python, SSH/Telnet automated commands, Netmiko/Paramiko interfaces, JSON/YAML parsing, and automated network troubleshooting.">
+                <span>View Certificate Details</span>
+                <i class="fa-solid fa-up-right-from-square"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Cert 4 -->
+          <div class="cert-card glass-card">
+            <div class="cert-header">
+              <div class="cert-icon" style="color: var(--accent-amber); background: rgba(245, 158, 11, 0.12);">
+                <i class="fa-solid fa-award"></i>
+              </div>
+              <span class="cert-date">Oct 2025</span>
+            </div>
+            <h3 class="cert-title">Leadership Training Bundle</h3>
+            <p class="cert-desc">
+              Completed structured leadership and team management training focused on agile execution, project coordination, communication excellence, and conflict resolution.
+            </p>
+            <div class="cert-action">
+              <button class="btn btn-outline btn-sm cert-modal-trigger" data-cert="Leadership Training Bundle" data-date="October 2025" data-details="Certified leadership capability demonstrating strategic task prioritization, empathetic team management, stakeholder communication, and high-performance collaboration.">
+                <span>View Certificate Details</span>
+                <i class="fa-solid fa-up-right-from-square"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         INTERACTIVE DEVELOPER TERMINAL
+         ========================================================================== -->
+    <section class="section" id="terminal">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-terminal"></i> Interactive Shell</div>
+          <h2 class="section-title">Developer <span class="text-gradient">Console</span></h2>
+          <p class="section-subtitle">Type commands into Rajat's digital CLI to explore skills, projects, or fast-track a hiring inquiry.</p>
+        </div>
+
+        <div class="terminal-wrapper">
+          <div class="terminal-window">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="terminal-title">rajat@bhattacharya-portfolio:~ (bash)</div>
+              <div style="font-size: 0.75rem; color: var(--accent-cyan); font-family: var(--font-mono);">v2.4-live</div>
+            </div>
+            <div class="terminal-body" id="terminal-body">
+              <div class="terminal-output" id="terminal-output">
+                <div class="term-line">Welcome to <strong>Rajat Bhattacharya</strong>'s Interactive Terminal.</div>
+                <div class="term-line">Type <span class="term-cmd">help</span> to see available commands or <span class="term-cmd">hire</span> to connect directly.</div>
+              </div>
+              <div class="terminal-input-row">
+                <span class="term-prompt">rajat@guest:~$</span>
+                <input type="text" class="terminal-input" id="terminal-input" placeholder="type 'help' and press Enter..." autocomplete="off" spellcheck="false" aria-label="Terminal command input">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         CONTACT SECTION
+         ========================================================================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-paper-plane"></i> Reach Out</div>
+          <h2 class="section-title">Let's <span class="text-gradient">Connect & Build</span></h2>
+          <p class="section-subtitle">Whether you have an internship opportunity, project collaboration, or tech query, my inbox is always open!</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Direct Details -->
+          <div class="contact-info-card">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="contact-meta">
+                <h4>Email Address</h4>
+                <a href="mailto:rajatbhattachrya20@gmail.com" id="contact-email-text">rajatbhattachrya20@gmail.com</a>
+              </div>
+              <button class="contact-copy-btn" onclick="copyToClipboard('rajatbhattachrya20@gmail.com', 'Email copied to clipboard!')" title="Copy Email">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="contact-meta">
+                <h4>Phone / WhatsApp</h4>
+                <a href="tel:+917063454183" id="contact-phone-text">+91-7063454183</a>
+              </div>
+              <button class="contact-copy-btn" onclick="copyToClipboard('+917063454183', 'Phone number copied!')" title="Copy Phone">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </div>
+              <div class="contact-meta">
+                <h4>LinkedIn Profile</h4>
+                <a href="http://www.linkedin.com/in/rajat-bhattacharya-774a96394" target="_blank" rel="noopener noreferrer">rajat-bhattacharya-774a96394</a>
+              </div>
+              <a href="http://www.linkedin.com/in/rajat-bhattacharya-774a96394" target="_blank" rel="noopener noreferrer" class="contact-copy-btn" title="Open LinkedIn">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fa-brands fa-github"></i>
+              </div>
+              <div class="contact-meta">
+                <h4>GitHub Repository</h4>
+                <a href="https://github.com/rajatbhattachrya20-hub" target="_blank" rel="noopener noreferrer">rajatbhattachrya20-hub</a>
+              </div>
+              <a href="https://github.com/rajatbhattachrya20-hub" target="_blank" rel="noopener noreferrer" class="contact-copy-btn" title="Open GitHub">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+
+            <div class="glass-card" style="padding: 1.25rem;">
+              <h4 style="margin-bottom: 0.5rem; color: var(--accent-cyan); font-size: 1rem;"><i class="fa-solid fa-location-dot"></i> Location & Education Base</h4>
+              <p style="font-size: 0.9rem; margin-bottom: 0.25rem;">Lovely Professional University, Phagwara, Punjab, India</p>
+              <p style="font-size: 0.8rem; color: var(--text-muted);">Hometown: Medinipur, West Bengal, India</p>
+            </div>
+          </div>
+
+          <!-- Interactive Message Form -->
+          <div class="glass-card">
+            <form id="contact-form">
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Your Name</label>
+                <input type="text" id="contact-name" class="form-input" placeholder="e.g. Alex Smith" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Email Address</label>
+                <input type="email" id="contact-email" class="form-input" placeholder="e.g. alex@company.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject" class="form-label">Subject</label>
+                <input type="text" id="contact-subject" class="form-input" placeholder="e.g. Internship Opportunity / Collaboration" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Message</label>
+                <textarea id="contact-message" class="form-textarea" placeholder="Hi Rajat, I loved your DSA visualizer project and would like to discuss..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;" id="contact-submit-btn">
+                <span>Send Message</span>
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">
+            Rajat<span class="text-gradient">.Bhattacharya</span>
+          </div>
+          <div class="footer-tagline">
+            Building software with passion, algorithms, and precision.
+          </div>
+        </div>
+
+        <div class="hero-socials">
+          <a href="http://www.linkedin.com/in/rajat-bhattacharya-774a96394" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/rajatbhattachrya20-hub" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="mailto:rajatbhattachrya20@gmail.com" class="social-link" title="Email" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="tel:+917063454183" class="social-link" title="Phone" aria-label="Phone">
+            <i class="fa-solid fa-phone"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span id="current-year"></span> Rajat Bhattacharya. All rights reserved.
+        </div>
+
+        <div class="footer-time-pill">
+          <i class="fa-regular fa-clock" style="color: var(--accent-cyan);"></i>
+          <span>IST: <strong id="live-ist-clock">Loading...</strong></span>
+        </div>
+
+        <a href="#hero" class="back-to-top" title="Back to top" aria-label="Back to top">
+          <i class="fa-solid fa-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Certificate Details Modal -->
+  <div class="modal-overlay" id="cert-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
+        <div class="cert-icon" style="width: 50px; height: 50px; border-radius: 12px; background: rgba(6, 182, 212, 0.15); color: var(--accent-cyan); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+          <i class="fa-solid fa-award"></i>
+        </div>
+        <div>
+          <h3 id="modal-cert-title" style="font-size: 1.25rem; color: var(--text-primary);">Certificate Title</h3>
+          <span id="modal-cert-date" style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan);">Date</span>
+        </div>
+      </div>
+
+      <div style="background: var(--bg-primary); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 1.5rem;">
+        <h4 style="font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.5rem;">Verification & Overview</h4>
+        <p id="modal-cert-body" style="font-size: 0.95rem; line-height: 1.65; color: var(--text-secondary);">Details...</p>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+        <button class="btn btn-secondary btn-sm" id="modal-done-btn">Close</button>
+        <a href="mailto:rajatbhattachrya20@gmail.com?subject=Certificate%20Verification%20Inquiry" class="btn btn-primary btn-sm">
+          <span>Request Verification Copy</span>
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Main JavaScript File -->
+  <script src="js/app.js"></script>
+</body>
+</html>
