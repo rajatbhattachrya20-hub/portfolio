@@ -492,13 +492,13 @@ function initTerminal() {
 
   if (!input || !output) return;
 
-  const commands = {
     help: () => `Available commands:<br>
       &nbsp;&nbsp;<span class="term-cmd">bio</span>         - About Rajat Bhattacharya<br>
       &nbsp;&nbsp;<span class="term-cmd">education</span>   - Academic credentials & CGPA<br>
       &nbsp;&nbsp;<span class="term-cmd">skills</span>      - Technical skill set summary<br>
       &nbsp;&nbsp;<span class="term-cmd">projects</span>    - Featured projects & details<br>
       &nbsp;&nbsp;<span class="term-cmd">certs</span>       - Training and certifications<br>
+      &nbsp;&nbsp;<span class="term-cmd">cv / resume</span> - Open / Download official CV PDF<br>
       &nbsp;&nbsp;<span class="term-cmd">contact</span>     - Direct contact info & socials<br>
       &nbsp;&nbsp;<span class="term-cmd">hire</span>        - Fast-track email modal / connection<br>
       &nbsp;&nbsp;<span class="term-cmd">clear</span>       - Clear terminal output`,
@@ -528,6 +528,16 @@ function initTerminal() {
       • Introduction to Artificial Intelligence<br>
       • Master Network Automation with Python for Network Engineers<br>
       • Leadership Training Bundle`,
+
+    cv: () => {
+      window.open('assets/Rajat_Bhattacharya_Resume.pdf', '_blank');
+      return `📄 Opening Rajat's official CV / Resume in a new tab (<a href="assets/Rajat_Bhattacharya_Resume.pdf" download="Rajat_Bhattacharya_Resume.pdf" style="color: var(--accent-cyan);">Click to Download</a>)...`;
+    },
+
+    resume: () => {
+      window.open('assets/Rajat_Bhattacharya_Resume.pdf', '_blank');
+      return `📄 Opening Rajat's official CV / Resume in a new tab (<a href="assets/Rajat_Bhattacharya_Resume.pdf" download="Rajat_Bhattacharya_Resume.pdf" style="color: var(--accent-cyan);">Click to Download</a>)...`;
+    },
 
     contact: () => `📫 <strong>Contact Details:</strong><br>
       • Email: <a href="mailto:rajatbhattachrya20@gmail.com" style="color: var(--accent-cyan);">rajatbhattachrya20@gmail.com</a><br>
