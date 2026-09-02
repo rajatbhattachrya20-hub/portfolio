@@ -630,15 +630,53 @@ function initCertModal() {
    ========================================================================== */
 function initContactForm() {
   const form = document.getElementById('contact-form');
+  const submitBtn = document.getElementById('contact-submit-btn');
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const name = document.getElementById('contact-name').value;
     const email = document.getElementById('contact-email').value;
+    const subject = document.getElementById('contact-subject')?.value || 'New Portfolio Message';
+    const message = document.getElementById('contact-message').value;
 
-    showToast(`Thank you, ${name}! Your message has been sent to Rajat.`);
-    form.reset();
+    const originalBtnHTML = submitBtn ? submitBtn.innerHTML : '<span>Send Message</span>';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span>Sending Message...</span> <i class="fa-solid fa-spinner fa-spin"></i>';
+    }
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/rajatbhattacharya20@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          _subject: `[Portfolio Message] ${subject} from ${name}`,
+          message: message
+        })
+      });
+
+      const data = await response.json();
+
+      if (response.ok || data.success === "true" || data.success === true) {
+        showToast(`✓ Thank you, ${name}! Your message was delivered directly to Rajat's inbox.`);
+        form.reset();
+      } else {
+        throw new Error(data.message || 'Failed to send message.');
+      }
+    } catch (err) {
+      showToast(`⚠️ Message could not be sent automatically. Please email rajatbhattacharya20@gmail.com directly.`);
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHTML;
+      }
+    }
   });
 }
 
