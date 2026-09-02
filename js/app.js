@@ -530,13 +530,13 @@ function initTerminal() {
       • Leadership Training Bundle`,
 
     cv: () => {
-      window.open('assets/Rajat_Bhattacharya_Resume.pdf', '_blank');
-      return `📄 Opening Rajat's official CV / Resume in a new tab (<a href="assets/Rajat_Bhattacharya_Resume.pdf" download="Rajat_Bhattacharya_Resume.pdf" style="color: var(--accent-cyan);">Click to Download</a>)...`;
+      window.open('assets/rajatcv.pdf', '_blank');
+      return `📄 Opening Rajat's official CV in a new tab (<a href="assets/rajatcv.pdf" download="rajatcv.pdf" style="color: var(--accent-cyan);">Click to Download</a>)...`;
     },
 
     resume: () => {
-      window.open('assets/Rajat_Bhattacharya_Resume.pdf', '_blank');
-      return `📄 Opening Rajat's official CV / Resume in a new tab (<a href="assets/Rajat_Bhattacharya_Resume.pdf" download="Rajat_Bhattacharya_Resume.pdf" style="color: var(--accent-cyan);">Click to Download</a>)...`;
+      window.open('assets/rajatcv.pdf', '_blank');
+      return `📄 Opening Rajat's official CV in a new tab (<a href="assets/rajatcv.pdf" download="rajatcv.pdf" style="color: var(--accent-cyan);">Click to Download</a>)...`;
     },
 
     contact: () => `📫 <strong>Contact Details:</strong><br>
