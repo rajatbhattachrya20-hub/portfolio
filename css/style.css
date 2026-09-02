@@ -610,6 +610,206 @@ ul {
   perspective: 1000px;
 }
 
+/* Hero Circle Avatar Showcase */
+.hero-avatar-showcase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.75rem;
+  position: relative;
+}
+
+.hero-avatar-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+.avatar-glow-ring {
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.45) 0%, rgba(139, 92, 246, 0.35) 50%, transparent 70%);
+  filter: blur(18px);
+  opacity: 0.85;
+  animation: pulseAvatarGlow 3.5s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.avatar-spin-border {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #06b6d4, #3b82f6, #8b5cf6, #ec4899, #10b981, #06b6d4);
+  animation: spinAvatarBorder 10s linear infinite;
+  padding: 3px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.hero-avatar-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--border-subtle);
+  background: var(--bg-tertiary);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.hero-avatar-wrapper:hover .hero-avatar-frame {
+  transform: scale(1.03);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 16px 45px rgba(6, 182, 212, 0.4);
+}
+
+.hero-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  display: block;
+  transition: transform var(--transition-smooth);
+}
+
+.hero-avatar-wrapper:hover .hero-avatar-img {
+  transform: scale(1.06);
+}
+
+.avatar-chip {
+  position: absolute;
+  padding: 0.4rem 0.85rem;
+  background: var(--bg-card);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: var(--shadow-md);
+  z-index: 2;
+  white-space: nowrap;
+  animation: floatChip 4s ease-in-out infinite alternate;
+}
+
+.avatar-chip-left {
+  top: 15%;
+  left: -28%;
+  border-color: rgba(6, 182, 212, 0.35);
+  animation-delay: 0s;
+}
+
+.avatar-chip-right {
+  bottom: 15%;
+  right: -28%;
+  border-color: rgba(139, 92, 246, 0.35);
+  animation-delay: -2s;
+}
+
+.avatar-chip i {
+  color: var(--accent-cyan);
+}
+
+.avatar-chip-right i {
+  color: var(--accent-violet);
+}
+
+.avatar-status-badge {
+  position: absolute;
+  bottom: -6px;
+  background: var(--bg-primary);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  padding: 0.28rem 0.75rem;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent-emerald);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  z-index: 3;
+}
+
+.status-pulse {
+  width: 7px;
+  height: 7px;
+  background: var(--accent-emerald);
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
+
+.status-pulse::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 11px;
+  height: 11px;
+  background: inherit;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseAvatarGlow {
+  0% { transform: scale(0.96); opacity: 0.6; }
+  100% { transform: scale(1.08); opacity: 0.95; }
+}
+
+@keyframes spinAvatarBorder {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes floatChip {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-7px); }
+}
+
+.nav-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .hero-avatar-wrapper {
+    width: 170px;
+    height: 170px;
+  }
+  .avatar-chip-left {
+    left: -10%;
+    top: 5%;
+  }
+  .avatar-chip-right {
+    right: -10%;
+    bottom: 5%;
+  }
+}
+
 .code-mockup-card {
   background: rgba(11, 15, 25, 0.85);
   backdrop-filter: blur(20px);
